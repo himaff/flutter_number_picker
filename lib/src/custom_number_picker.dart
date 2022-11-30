@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_number_picker/src/res.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CustomNumberPicker<T extends num> extends StatefulWidget {
+class CustomNumberPicker<T extends int> extends StatefulWidget {
   final ShapeBorder? shape;
   final TextStyle? valueTextStyle;
-  final Function(T) onValue;
+  final void Function(T) onValue;
   final Widget? customAddButton;
   final Widget? customMinusButton;
   final T maxValue;
@@ -42,11 +42,11 @@ class CustomNumberPicker<T extends num> extends StatefulWidget {
   }
 }
 
-class CustomNumberPickerState extends State<CustomNumberPicker<num>> {
-  late num _initialValue;
-  late num _maxValue;
-  late num _minValue;
-  late num _step;
+class CustomNumberPickerState extends State<CustomNumberPicker<int>> {
+  late int _initialValue;
+  late int _maxValue;
+  late int _minValue;
+  late int _step;
   Timer? _timer;
 
   @override
